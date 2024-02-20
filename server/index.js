@@ -3,11 +3,16 @@ const app = express();
 const PORT = 3000;
 
 app.get( '/testServer', (req, res)=> {
-    res.statusCode(200);
+    res.send({
+        data: {
+            name: "middas",
+            age: "28"
+        }
+    });
 });
 
-app.get('/', (res, req)=> {
-    res.statusCode(200);
+app.get('/', (req, res)=> {
+    res.send("Middas");
 });
 
 app.listen(PORT, () => {
